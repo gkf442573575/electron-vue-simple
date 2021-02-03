@@ -13,7 +13,7 @@ module.exports = {
   },
   win: {
     // win相关配置
-    icon: './favicon.ico', // 图标，当前图标在根目录下，注意这里有两个坑
+    icon: './favicon.ico', // 图标，当前图标在根目录下，注意这里有两个坑 必须是256x256
     target: [
       {
         target: 'nsis', // 利用nsis制作安装程序
