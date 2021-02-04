@@ -1,6 +1,6 @@
 'use strict'
 
-import { app, protocol, BrowserWindow } from 'electron'
+import { app, protocol, BrowserWindow, screen } from 'electron'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
 const isDevelopment = process.env.NODE_ENV !== 'production'
@@ -12,13 +12,18 @@ protocol.registerSchemesAsPrivileged([
 
 async function createWindow() {
   // Create the browser window.
+  const size = screen.getPrimaryDisplay().workAreaSize // get workAreaSize
+  const width = parseInt(size.width)
+  const height = parseInt(size.height)
+
   const win = new BrowserWindow({
-    width: 1200,
-    height: 650,
+    width,
+    height,
     webPreferences: {
       // Use pluginOptions.nodeIntegration, leave this alone
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
-      nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION
+      // process.env.ELECTRON_NODE_INTEGRATION
+      nodeIntegration: true
     }
   })
 
@@ -30,6 +35,10 @@ async function createWindow() {
     createProtocol('app')
     // Load the index.html when not in development
     win.loadURL('app://./index.html')
+    // build package is debug
+    if (process.env.VUE_APP_ISDEBUG === '1') {
+      win.webContents.openDevTools()
+    }
   }
 }
 

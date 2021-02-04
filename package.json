@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service electron:build",
+    "build:mac": "vue-cli-service electron:build --mac",
     "build:win": "vue-cli-service electron:build --win",
     "build:web": "vue-cli-service build",
     "dev": "vue-cli-service electron:serve",
