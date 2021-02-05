@@ -5,20 +5,32 @@
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Compiles and hot-reloads for development in electron
 ```
-npm run serve
+npm run dev
 ```
 
-### Compiles and minifies for production
+### Compiles and hot-reloads for development in browser
 ```
-npm run build
+npm run dev:web
+```
+
+### Compiles and minifies for production for mac
+```
+npm run build:mac
+```
+
+### Compiles and minifies for production for win
+```
+npm run build:win
+```
+
+### Compiles and minifies for production for browser
+```
+npm run build:web
 ```
 
 ### Lints and fixes files
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
