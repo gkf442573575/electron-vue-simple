@@ -47,7 +47,8 @@ module.exports = {
   },
   pluginOptions: {
     electronBuilder: {
-      builderOptions: electronBuildOptions
+      builderOptions: electronBuildOptions,
+      nodeIntegration: true
     }
   },
   chainWebpack(config) {
