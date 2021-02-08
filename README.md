@@ -34,3 +34,7 @@ npm run build:web
 ```
 npm run lint
 ```
+
+If you want to check the handling of electronic problems 👇
+
+[Electron](https://www.yuque.com/fengqiyulingyun/uyo80f/syt4ds)
